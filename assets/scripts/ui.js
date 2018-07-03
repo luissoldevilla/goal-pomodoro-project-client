@@ -1,9 +1,11 @@
 
 const store = require('./store')
+const showGoalsTemplate = require('./templates/goal-listing.handlebars')
 
 // SIGN UP
 const signUpSuccess = function (data) {
   $('#user-message-signUp').html('You are Sign Up!')
+  document.getElementById('form-signUp').reset()
   console.log(data)
 }
 
@@ -23,6 +25,8 @@ const signInSuccess = function (response) {
   // $('#myModal').modal('hide')
   $('#change-password').show()
   $('#sign-out').show()
+  $('#form-createGoal').show()
+  $('#get-allGoals').show()
 }
 
 const signInFail = function (error) {
@@ -58,6 +62,31 @@ const signOutFail = function (data) {
   $('#user-message-signOut').html('Something went wrong')
 }
 
+// RESOURCE CREATE BOOK
+
+const createGoalSuccess = function (data) {
+  $('#create-goal-message').html('You have Successfully created your Goal')
+}
+const createGoalFail = function (data) {
+  $('#create-goal-message').html('Your Goal was not successfully created')
+}
+
+// SHOW LISTING IF BOOKS
+
+const showGoalsSuccess = (data) => {
+  console.log('data is', data)
+  const showGoalsHtml = showGoalsTemplate({ goals: data.goals })
+  $('.content').html(showGoalsHtml)
+}
+
+// DELETE ONE GOAL FORM RESOURCE
+
+const showGoalsFail = (error) => {
+  console.error(error)
+}
+
+// UPDATE ONE GOAL FORM RESOURCE
+
 module.exports = {
   signUpSuccess,
   signUpFail,
@@ -66,5 +95,9 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFail,
   signOutSuccess,
-  signOutFail
+  signOutFail,
+  createGoalSuccess,
+  createGoalFail,
+  showGoalsSuccess,
+  showGoalsFail
 }

@@ -39,9 +39,59 @@ const onSignOut = function (event) {
     .catch(ui.signOutFail)
 }
 
+// THIS IS RESOURCE EVENTS
+
+const onCreateGoal = function (event) {
+  event.preventDefault()
+  console.log(event)
+  const data = getFormFields(event.target)
+  api.createGoal(data)
+    .then(ui.createGoalSuccess)
+    .catch(ui.createGoalFail)
+  console.log(data)
+}
+
+// THIS IS HANDLEBARS FOR LISTING RESOURCE
+
+const onShowAllGoals = function (event) {
+  console.log('onShowAllGoals')
+  event.preventDefault()
+  api.showGoals()
+    .then(ui.showGoalsSuccess)
+    .catch(ui.showGoalsFail)
+}
+
+// THIS IS FOR DELETING A GOAL ON RESOURCE
+
+const onDeleteShownGoals = (event) => {
+  event.preventDefault()
+  console.log('onDeleteShownGoals')
+  const goalId = $(event.target).closest('button').attr('data-id')
+  console.log(goalId)
+  api.deleteGoals(goalId)
+    .then(() => onShowAllGoals(event))
+    .catch(ui.showGoalsFail)
+}
+
+// THIS IS FOR UPDATING A GOAL ON RESOURCE
+
+const onUpdateShownGoals = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const goalId = $(event.target).attr('data-id')
+  console.log(goalId)
+  api.updateGoals(goalId, data)
+    .then(() => onShowAllGoals(event))
+    .catch(ui.updateGoalsFail)
+}
+
 module.exports = {
   onFormSignUp,
   onFormSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onCreateGoal,
+  onShowAllGoals,
+  onDeleteShownGoals,
+  onUpdateShownGoals
 }

@@ -99,5 +99,64 @@
 
         <div id="user-message-signOut"></div>
 
+        <!-- CREATE GOAL RESOURCE -->
+
+        <form id="form-createGoal">
+
+          <h4> Create your goal now! </h4>
+
+          <div>
+
+            <label>Goal Title</label>
+            <input type="text" class="form-control" name="goal[title]" placeholder="Name your Goal">
+
+          </div>
+
+          <div>
+
+            <label>Description</label>
+            <input type="text" class="form-control" name="goal[description]" placeholder="Describe your goal here...">
+
+          </div>
+
+          <div id="user-message-signIn"></div>
+
+          <button id="create-goal" type="submit" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Run your Goal</button>
+
+          <div id="create-goal-message"></div>
+
+        </form>
+
+        <!-- GET ALL GOALS RESOURCE -->
+
+        <button id="get-allGoals" type="submit" class="btn btn-primary">Show my Goals</button>
+
+        <div id="goal-content" class="content">
+        </div>
+
+        <!-- UPDATE FORM -->
+
+        <!-- <form id="form-updateGoal">
+
+          <h4> Updating your goal now! </h4>
+
+          <div>
+
+            <label>Goal Title</label>
+            <input type="text" class="form-control" name="goal[title]" placeholder="Name your Goal">
+
+          </div>
+
+          <div>
+
+            <label>Description</label>
+            <input type="text" class="form-control" name="goal[description]" placeholder="Describe your goal here...">
+
+            <button id="update-goal" type="submit" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Update your Goal</button>
+
+          </div>
+
+        </form> -->
+
     </body>
 </html>

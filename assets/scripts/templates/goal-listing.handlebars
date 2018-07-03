@@ -1,0 +1,33 @@
+{{#each goals as |goal|}}
+  {{log goal}}
+
+  <div>
+  <h1 data-id="{{goal.id}}"> <small>Title: {{goal.title}}</small></h1>
+  <h2 data-id="{{goal.id}}"> <small>Description: {{goal.description}}</small></h2>
+  <button class="btn btn-default remove-button" data-id="{{goal.id}}">Remove Goal!</button>
+  <!-- <button class="btn btn-default update-button" data-id="{{goal.id}}">Update Goal!</button> -->
+
+    <form class="form-updateGoal" data-id="{{goal.id}}">
+
+      <h4> Updating your goal now! </h4>
+
+      <div>
+
+        <label>Goal Title</label>
+        <input type="text" class="form-control" name="goal[title]" placeholder="Name your Goal">
+
+      </div>
+
+      <div>
+
+        <label>Description</label>
+        <input type="text" class="form-control" name="goal[description]" placeholder="Describe your goal here...">
+
+        <button data-id="update-goal" type="submit" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Update your Goal</button>
+
+      </div>
+
+    </form>
+  </div>
+
+{{/each}}
