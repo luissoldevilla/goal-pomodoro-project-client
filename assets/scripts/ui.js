@@ -27,6 +27,9 @@ const signInSuccess = function (response) {
   $('#sign-out').show()
   $('#form-createGoal').show()
   $('#get-allGoals').show()
+  $('.signup-portal').hide()
+  $('#sign-in-button').hide()
+  $('.pass-change').show()
 }
 
 const signInFail = function (error) {
@@ -56,6 +59,12 @@ const signOutSuccess = function (data) {
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#user-message-signIn').html('')
+  $('#sign-in-button').show()
+  $('.signup-portal').show()
+  $('#form-createGoal').hide()
+  $('#get-allGoals').hide()
+  $('.pass-change').hide()
+  $('#goal-content').hide()
 }
 
 const signOutFail = function (data) {
@@ -66,6 +75,27 @@ const signOutFail = function (data) {
 
 const createGoalSuccess = function (data) {
   $('#create-goal-message').html('You have Successfully created your Goal')
+  // document.getElementById('timer').innerHTML = 1 + ":" + '';
+  // startTimer();
+  //
+  // function startTimer() {
+  //   var presentTime = document.getElementById('timer').innerHTML;
+  //   var timeArray = presentTime.split(/[:]+/);
+  //   var m = timeArray[0];
+  //   var s = checkSecond((timeArray[1] - 1));
+  //   if(s==59){m=m-1}
+  //   if(m<0){alert('timer completed')}
+  //
+  //   document.getElementById('timer').innerHTML =
+  //     m + ":" + s;
+  //   setTimeout(startTimer, 1000);
+  // }
+  //
+  // function checkSecond(sec) {
+  //   if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+  //   if (sec < 0) {sec = "59"};
+  //   return sec;
+  // }
 }
 const createGoalFail = function (data) {
   $('#create-goal-message').html('Your Goal was not successfully created')

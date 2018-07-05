@@ -14,6 +14,7 @@ $(() => {
     $('#form-createGoal').hide()
     $('#get-allGoals').hide()
     $('#form-updateGoal').hide()
+    $('.pass-change').hide()
   })
   // AUTH GOES HERE
   $('#form-signUp').on('submit', goalsEvents.onFormSignUp)
@@ -29,5 +30,5 @@ $(() => {
   //   debugger
   //   $('#form-updateGoal').show()
   // })
-  $('#goal-content').on('submit', '.form-updateGoal', goalsEvents.onUpdateShownGoals)
+  $('#goal-content').on('submit', '.form-updategoal', goalsEvents.onUpdateShownGoals)
 })
