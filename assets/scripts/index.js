@@ -8,14 +8,13 @@ const goalsEvents = require('./events.js')
 
 $(() => {
   // your JS code goes here
-  $(document).ready(function () {
-    $('#change-password').hide()
-    $('#sign-out').hide()
-    $('#form-createGoal').hide()
-    $('#get-allGoals').hide()
-    $('#form-updateGoal').hide()
-    $('.pass-change').hide()
-  })
+  $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#form-createGoal').hide()
+  $('#get-allGoals').hide()
+  $('#form-updateGoal').hide()
+  $('.pass-change').hide()
+
   // AUTH GOES HERE
   $('#form-signUp').on('submit', goalsEvents.onFormSignUp)
   $('#form-signIn').on('submit', goalsEvents.onFormSignIn)
