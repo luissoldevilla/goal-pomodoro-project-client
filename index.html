@@ -11,6 +11,7 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
     <body>
 
       <nav class="navbar navbar-inverse">
@@ -27,7 +28,7 @@
 
 
             <label for="inputEmail1">Email address</label>
-            <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email">
+            <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email" required="true">
 
           </div>
 
@@ -58,6 +59,7 @@
       </div>
 
     </nav>
+
 
       <!-- SIGN UP FORM -->
       <div class="signup-portal">
@@ -125,19 +127,19 @@
 
         <form id="form-createGoal" class="resource-form">
 
-          <h4> Create your goal now! </h4>
+          <h2> Create your goal now! </h2>
 
           <div>
 
             <label>Goal Title</label>
-            <input type="text" class="form-control" name="goal[title]" placeholder="Name your Goal">
+            <input type="text" class="form-control" name="goal[title]" placeholder="Name your Goal" required="true">
 
           </div>
 
           <div>
 
             <label>Description</label>
-            <input type="text" class="form-control" name="goal[description]" placeholder="Describe your goal here...">
+            <input type="text" class="form-control" name="goal[description]" placeholder="Describe your goal here..." required="true">
 
           </div>
 
@@ -158,7 +160,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -200,7 +202,7 @@
 
         <!-- GET ALL GOALS RESOURCE -->
 
-        <button id="get-allGoals" type="submit" class="btn btn-primary">Show my Goals</button>
+        <button id="get-allGoals" type="submit" class="btn btn-primary show-goals">Show my Goals</button>
 
         <div id="goal-content" class="content">
         </div>

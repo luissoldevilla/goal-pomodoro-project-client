@@ -30,6 +30,8 @@ const signInSuccess = function (response) {
   $('.signup-portal').hide()
   $('#sign-in-button').hide()
   $('.pass-change').show()
+  $('#goal-content').show()
+  $('#user-message-signOut').html('')
 }
 
 const signInFail = function (error) {
@@ -88,7 +90,7 @@ const createGoalSuccess = function (data) {
   //
   //   document.getElementById('timer').innerHTML =
   //     m + ":" + s;
-  //   setTimeout(startTimer, 1000);
+  //   setTimeout(startTimer, 1000)
   // }
   //
   // function checkSecond(sec) {

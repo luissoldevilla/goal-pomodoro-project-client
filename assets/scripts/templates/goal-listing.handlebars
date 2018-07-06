@@ -1,11 +1,14 @@
 {{#each goals as |goal|}}
   {{log goal}}
 
-  <div>
+  <div class="handlebar">
   <h1 data-id="{{goal.id}}"> <small>Title: {{goal.title}}</small></h1>
   <h2 data-id="{{goal.id}}"> <small>Description: {{goal.description}}</small></h2>
   <button class="btn btn-default remove-button" data-id="{{goal.id}}">Remove Goal!</button>
   <!-- <button class="btn btn-default update-button" data-id="{{goal.id}}">Update Goal!</button> -->
+  </div>
+
+  <div class="handlebar">
 
     <form class="form-updategoal" data-id="{{goal.id}}">
 
@@ -29,5 +32,7 @@
 
     </form>
   </div>
+
+  <hr>
 
 {{/each}}
