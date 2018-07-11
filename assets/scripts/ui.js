@@ -4,7 +4,7 @@ const showGoalsTemplate = require('./templates/goal-listing.handlebars')
 
 // SIGN UP
 const signUpSuccess = function (data) {
-  $('#user-message-signUp').html('You are Sign Up!')
+  $('#user-message-signUp').html('You are Sign Up!').fadeIn().delay(3000).fadeOut()
   document.getElementById('form-signUp').reset()
   console.log(data)
 }
@@ -59,7 +59,7 @@ const changePasswordFail = function (data) {
 // SIGN OUT
 
 const signOutSuccess = function (data) {
-  $('#user-message-signOut').html('You are sign Out!')
+  $('#user-message-signOut').html('You are sign Out!').fadeIn().delay(3000).fadeOut()
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#user-message-signIn').html('')
