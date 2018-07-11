@@ -32,6 +32,8 @@ const signInSuccess = function (response) {
   $('.pass-change').show()
   $('#goal-content').show()
   $('#user-message-signOut').html('')
+  $('.form-group').hide()
+  $('.content').html('')
 }
 
 const signInFail = function (error) {
@@ -67,6 +69,9 @@ const signOutSuccess = function (data) {
   $('#get-allGoals').hide()
   $('.pass-change').hide()
   $('#goal-content').hide()
+  $('.form-group').show()
+  document.getElementById('form-createGoal').reset()
+  document.getElementById('change-password').reset()
 }
 
 const signOutFail = function (data) {
@@ -76,28 +81,8 @@ const signOutFail = function (data) {
 // RESOURCE CREATE BOOK
 
 const createGoalSuccess = function (data) {
-  $('#create-goal-message').html('You have Successfully created your Goal')
-  // document.getElementById('timer').innerHTML = 1 + ":" + '';
-  // startTimer();
-  //
-  // function startTimer() {
-  //   var presentTime = document.getElementById('timer').innerHTML;
-  //   var timeArray = presentTime.split(/[:]+/);
-  //   var m = timeArray[0];
-  //   var s = checkSecond((timeArray[1] - 1));
-  //   if(s==59){m=m-1}
-  //   if(m<0){alert('timer completed')}
-  //
-  //   document.getElementById('timer').innerHTML =
-  //     m + ":" + s;
-  //   setTimeout(startTimer, 1000)
-  // }
-  //
-  // function checkSecond(sec) {
-  //   if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
-  //   if (sec < 0) {sec = "59"};
-  //   return sec;
-  // }
+  $('#create-goal-message').html('You have Successfully created your Goal').fadeIn().delay(3000).fadeOut()
+  document.getElementById('form-createGoal').reset()
 }
 const createGoalFail = function (data) {
   $('#create-goal-message').html('Your Goal was not successfully created')
@@ -107,8 +92,13 @@ const createGoalFail = function (data) {
 
 const showGoalsSuccess = (data) => {
   console.log('data is', data)
-  const showGoalsHtml = showGoalsTemplate({ goals: data.goals })
-  $('.content').html(showGoalsHtml)
+  if (data.goals.length !== 0) {
+    const showGoalsHtml = showGoalsTemplate({ goals: data.goals })
+    $('.content').html(showGoalsHtml).fadeIn()
+  } else {
+    $('.content').html('You dont have any goals yet').fadeIn().delay(1500).fadeOut()
+  }
+  console.log(data.goals.length)
 }
 
 // DELETE ONE GOAL FORM RESOURCE
