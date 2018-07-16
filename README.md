@@ -1,66 +1,42 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# browser-template
+# Goal Tracker Client Side
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+  Client-side repo for full stack web application. The application purpose is
+  to allow users to keep track of their goals.
 
-## Installation
+## The Idea
 
-1. [Download](../../archive/master.zip) this template.
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
+The reason I decided to make this application was that I use the Pomodoro
+technique often, but most of the tools out there for there use the  Pomodoro
+technique only based on a  timer set on 4 intervals of 25 minutes each with 5
+minutes between each interval. What I want to do for this project was ultimately
+make a goal tracking system based on the Pomodoro technique, meaning the user is
+able to take action on their goal using the Pomodoro technique within the
+application.
 
-## Structure
+## User Stories
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+1. As a user, I want to be able to create a new goal
+1. As a user, I want to be able to create a update a goal
+1. As a user, I want to be able to create a delete a goal
+1. As a user, I want to be able to share my goal(V2 or later versions)
+1. As a user, I want to have 25 min intervals(V2 or later versions)
+1. As a user, I want to be able to get response back from other user
+1. As a user, I want to be accomplish my goal
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`config/environment.js`](config/environment.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
+## Wireframes:
+![alt text](https://i.imgur.com/Ziau8I1.png)
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
 
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
+## Technology Used:
 
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt test`: runs any automated tests, depends on `grunt build`
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
+The main front-end framework is built on Javascript, HTML5, and CSS. Utilizing
+Bootstrap also takes part in building the client side, this can include the
+Sign-In navigation bar, as well as the effects on the buttons when hovering over.
+Bootstrap also allow me to use modals in different sections of the client, such
+as the Sign-up and Change Password. Another big part of my client side is
+utilizing Handlebars, these, are used for displaying the user goals once
+created, they are also attached to my API.
 
 ## Additional Resources
 

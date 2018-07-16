@@ -6,7 +6,7 @@ const showGoalsTemplate = require('./templates/goal-listing.handlebars')
 const signUpSuccess = function (data) {
   $('#user-message-signUp').html('You are Sign Up!').fadeIn().delay(3000).fadeOut()
   document.getElementById('form-signUp').reset()
-  console.log(data)
+  // console.log(data)
 }
 
 const signUpFail = function (data) {
@@ -19,7 +19,7 @@ const signUpFail = function (data) {
 
 const signInSuccess = function (response) {
   store.user = response.user
-  console.log(response.user)
+  // console.log(response.user)
   document.getElementById('form-signIn').reset()
   $('#user-message-signIn').html('You are sign In!')
   // $('#myModal').modal('hide')
@@ -37,7 +37,7 @@ const signInSuccess = function (response) {
 }
 
 const signInFail = function (error) {
-  console.log('signResponse is ', error)
+  console.log(error)
   document.getElementById('form-signIn').reset()
   $('#user-message-signIn').html('something went wrong, try again!')
 }
@@ -45,13 +45,13 @@ const signInFail = function (error) {
 // CHANGE PASSWORD
 
 const changePasswordSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   document.getElementById('change-password').reset()
   $('#user-message-passwordChange').html('You have changed your password')
 }
 
 const changePasswordFail = function (data) {
-  console.log(data)
+  // console.log(data)
   document.getElementById('change-password').reset()
   $('#user-message-passwordChange').html('Something went wrong, password not changed')
 }
@@ -91,14 +91,14 @@ const createGoalFail = function (data) {
 // SHOW LISTING IF BOOKS
 
 const showGoalsSuccess = (data) => {
-  console.log('data is', data)
+  // console.log('data is', data)
   if (data.goals.length !== 0) {
     const showGoalsHtml = showGoalsTemplate({ goals: data.goals })
     $('.content').html(showGoalsHtml).fadeIn()
   } else {
     $('.content').html('You dont have any goals yet').fadeIn().delay(1500).fadeOut()
   }
-  console.log(data.goals.length)
+  // console.log(data.goals.length)
 }
 
 // DELETE ONE GOAL FORM RESOURCE
