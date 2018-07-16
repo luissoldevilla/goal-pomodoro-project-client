@@ -27,6 +27,14 @@ application.
 ## Wireframes:
 ![alt text](https://i.imgur.com/Ziau8I1.png)
 
+## Planning
+
+The way I approached my project was to focus on the backend first, once that was
+done,  I started with the Client side.  I built the front end first based on MVP.
+These meant that I focus on Auth and the main MVP events (CRUD), such as
+`create goal form`, show, deleted and update function based on handlebars.
+After that, I started to focus on the appearance, I utilize Bootstrap for this,
+I customized a top/ sign-in bar as well as modals.
 
 ## Technology Used:
 
@@ -37,6 +45,21 @@ Bootstrap also allow me to use modals in different sections of the client, such
 as the Sign-up and Change Password. Another big part of my client side is
 utilizing Handlebars, these, are used for displaying the user goals once
 created, they are also attached to my API.
+
+## Future iterations
+
+- One Future iteration will be implementing a timer, as you can see on my
+wire-fame it is included, this part I would consider to be a version 2, which
+that what ultimately want for this application.
+
+## API
+
+[For Backend Repo click here](https://github.com/luissoldevilla/goal-pomodoro-project-api)
+
+## Deployed Links:
+
+- [Client]()
+- [Backend]()
 
 ## Additional Resources
 
