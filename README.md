@@ -58,8 +58,8 @@ that what ultimately want for this application.
 
 ## Deployed Links:
 
-- [Client]()
-- [Backend]()
+- [Client](https://luissoldevilla.github.io/goal-pomodoro-project-client/)
+- [Backend](https://sleepy-tor-47880.herokuapp.com/)
 
 ## Additional Resources
 
